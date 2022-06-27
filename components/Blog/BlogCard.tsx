@@ -11,7 +11,7 @@ interface Props {
 const BlogCard: React.FC<Props> = ({ post }) => {
   return (
     <Link href={`blog/${post.slug}`}>
-      <div className="overflow-hidden my-2 cursor-pointer text-foreground border-b-2 border-foreground pb-4 hover:scale-105 transition-all group px-4">
+      <div className="overflow-hidden my-2 cursor-pointer text-foreground border-b-2 border-foreground hover:scale-95 transition-all group">
         <div className="py-4">
           <div className="font-bold text-5xl mb-4 text-cyan group-hover:text-accent underline">
             {post.title}
