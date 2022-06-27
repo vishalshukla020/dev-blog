@@ -24,6 +24,7 @@ export interface ArticleType {
 }
 
 export interface Meta {
+  timeReading?: { text: string };
   slug: string;
   title: string;
   description: string;

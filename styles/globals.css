@@ -1,3 +1,109 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-mono no-scrollbar;
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply relative flex-grow my-0 mx-auto py-0 px-6 w-auto h-full md:max-w-[46rem] lg:max-w-[960px] xl:max-w-[1152px] 2xl:max-w-[1244px];
+  }
+
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .primary-button {
+    @apply transition-all inline-block bg-gray-200 rounded-full px-5 py-3 sm:text-xl font-semibold text-gray-700 mr-2 mb-2 hover:scale-105 origin-left;
+  }
+
+  .title {
+    @apply text-[2.5rem] sm:text-6xl lg:text-8xl font-bold tracking-wide;
+  }
+
+  .h1 {
+    @apply text-3xl sm:text-5xl leading-[1];
+  }
+
+  .h2 {
+    @apply text-xl sm:text-3xl;
+  }
+
+  .h3 {
+    @apply text-lg sm:text-2xl;
+  }
+
+  @layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+
+    .hover-animation-link {
+      position: relative;
+    }
+
+    .hover-animation-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      height: 3px;
+      width: 100%;
+      display: block;
+      background-color: #ffb86c;
+    }
+    .hover-animation-link:hover::before {
+      animation: underline 0.8s infinite;
+    }
+
+    @keyframes underline {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* typing animation */
+    .typing-demo {
+      width: 13.5ch;
+      animation: typing 6s steps(13) 0.2s infinite,
+        blink 0.5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 5px solid;
+      font-family: monospace;
+    }
+
+    @keyframes typing {
+      0% {
+        width: 0;
+      }
+      40% {
+        width: 13.5ch;
+      }
+      60% {
+        width: 13.5ch;
+      }
+      100% {
+        width: 0;
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        border-color: transparent;
+      }
+    }
+  }
+}

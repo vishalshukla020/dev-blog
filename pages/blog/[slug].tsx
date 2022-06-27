@@ -2,13 +2,15 @@ import { Meta } from "interfaces";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import readingTime from "reading-time";
 
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
 
 import { api } from "utils/lib";
-import Header from "components/Article/Header";
+import Transition from "components/Transition";
+import BlogHeader from "components/Blog/BlogHeader";
 
 interface MDXPost {
   post: {
@@ -19,22 +21,21 @@ interface MDXPost {
 
 const PostPage: NextPage<MDXPost> = ({ post: { source, meta } }) => {
   return (
-    <div className="max-w-[50rem] mx-auto">
-      <Header
-        title={meta.title}
-        description={meta.description}
-        date={meta.date}
-      />
-      <div className="mt-12 prose md:prose-xl">
-        <MDXRemote {...source} />
+    <Transition id="blog-page">
+      <div className="max-w-[50rem] mx-auto">
+        <BlogHeader meta={meta} />
+        <div className="prose prose-lg md:prose-xl text-foreground prose-a:text-accent prose-code:text-accent_primary py-5">
+          <MDXRemote {...source} />
+        </div>
       </div>
-    </div>
+    </Transition>
   );
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string };
   const { content, data } = api.getRawArticleBySlug(slug);
+  const timeReading: any = readingTime(content);
 
   const mdxSource = await serialize(content, {
     mdxOptions: {
@@ -46,7 +47,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     },
   });
 
-  return { props: { post: { source: mdxSource, meta: data } } };
+  return {
+    props: { post: { source: mdxSource, meta: { ...data, timeReading } } },
+  };
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {

@@ -8,21 +8,17 @@ interface Props {
   post: ArticleType;
 }
 
-const Articles: React.FC<Props> = ({ post }) => {
+const BlogCard: React.FC<Props> = ({ post }) => {
   return (
     <Link href={`blog/${post.slug}`}>
-      <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 cursor-pointer flex-none">
-        <div className="max-h-[200px] w-full overflow-hidden">
-          <img
-            className="w-full object-cover"
-            src={post.coverImage}
-            alt="Sunset in the mountains"
-            loading="lazy"
-          />
-        </div>
+      <div className="overflow-hidden my-2 cursor-pointer text-foreground border-b-2 border-foreground pb-4 hover:scale-105 transition-all group">
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{post.title}</div>
-          <p className="text-gray-700 text-base">{post.description}</p>
+          <div className="font-bold text-5xl mb-2 text-cyan group-hover:text-accent underline">
+            {post.title}
+          </div>
+          <p className="text-foreground text-base opacity-90">
+            {post.description || post.excerpt}
+          </p>
         </div>
         <div className="flex flex-column align-center px-6 py-4">
           <p className="text-[#6F6F6F]">
@@ -44,4 +40,4 @@ const Articles: React.FC<Props> = ({ post }) => {
   );
 };
 
-export default Articles;
+export default BlogCard;
