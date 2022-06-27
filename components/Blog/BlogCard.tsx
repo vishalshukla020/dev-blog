@@ -11,21 +11,21 @@ interface Props {
 const BlogCard: React.FC<Props> = ({ post }) => {
   return (
     <Link href={`blog/${post.slug}`}>
-      <div className="overflow-hidden my-2 cursor-pointer text-foreground border-b-2 border-foreground pb-4 hover:scale-105 transition-all group">
-        <div className="px-6 py-4">
-          <div className="font-bold text-5xl mb-2 text-cyan group-hover:text-accent underline">
+      <div className="overflow-hidden my-2 cursor-pointer text-foreground border-b-2 border-foreground pb-4 hover:scale-105 transition-all group px-4">
+        <div className="py-4">
+          <div className="font-bold text-5xl mb-4 text-cyan group-hover:text-accent underline">
             {post.title}
           </div>
-          <p className="text-foreground text-base opacity-90">
+          <p className="text-foreground text-base opacity-80">
             {post.description || post.excerpt}
           </p>
         </div>
-        <div className="flex flex-column align-center px-6 py-4">
+        <div className="flex flex-column align-center py-2">
           <p className="text-[#6F6F6F]">
             {post.timeReading.text} • {post.date}
           </p>
         </div>
-        <div className="px-6 pt-4 pb-2">
+        <div className="pt-4 pb-2">
           {post.tags.map((tag) => (
             <span
               key={tag}
