@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
           </span>
         </p>
         <div className="text-slate pl-10 md:pl-12 font-thin text-xl sm:text-3xl sm:mt-2 md:w-[90%] lg:w-[80%] text-justify lg:text-start">
-          <span className="text-white">return</span> &quot;Hi! my name is{" "}
+          &quot;Hi! my name is{" "}
           <span className="text-green font-bold cursor-pointer text-[1.8rem] sm:text-[2.5rem]">
             {" "}
             Vishal Shukla

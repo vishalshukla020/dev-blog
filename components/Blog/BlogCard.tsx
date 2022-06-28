@@ -29,7 +29,7 @@ const BlogCard: React.FC<Props> = ({ post }) => {
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="inline-block border-2 border-green text-white rounded-lg px-3 py-1 text-lg mr-2 mb-2"
+              className="inline-block border-2 border-green text-green rounded-lg px-3 py-1 text-lg mr-2 mb-2"
             >
               - {tag}
             </span>
