@@ -4,7 +4,9 @@ import Head from "next/head";
 
 import Transition from "components/Transition";
 import Hero from "components/Hero";
-import Projects from "components/Projects";
+import About from "components/About";
+import Contact from "components/Contact";
+import Socials from "components/Socials";
 
 const Home: NextPage = () => {
   return (
@@ -16,7 +18,9 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Hero />
-        <Projects />
+        <About />
+        <Contact />
+        <Socials />
       </div>
     </Transition>
   );

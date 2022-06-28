@@ -29,15 +29,15 @@ const Navigation: React.FC = () => {
       <nav className="wrapper flex justify-between items-center py-8">
         <Link href="/">
           <div
-            className="logo text-lg tracking-wider font-bold text-accent cursor-pointer"
+            className="logo text-2xl tracking-wider text-agreen cursor-pointer"
             onClick={() => setNavOpen(false)}
           >
-            heheh !
+            &#128511;
           </div>
         </Link>
 
         {/* desktop menu */}
-        <ul className="hidden text-lg items-center child:ml-8 child:cursor-pointer child-hover:hover-animation-link child:w-max py-2 md:flex">
+        <ul className="hidden text-2xl items-center child:ml-8 child:cursor-pointer child-hover:hover-animation-link child:w-max py-2 md:flex">
           <Link href="/#about">
             <li>about</li>
           </Link>
@@ -54,22 +54,22 @@ const Navigation: React.FC = () => {
 
         {/* hamburger menu button */}
         <div
-          className="hamburgerIcon flex flex-col items-end child:mb-1 child:rounded cursor-pointer group md:hidden child:bg-accent"
+          className="hamburgerIcon flex flex-col items-end child:mb-1 child:rounded cursor-pointer group md:hidden child:bg-white"
           onClick={toggleNav}
         >
-          <span className="w-4 h-1 group-hover:bg-accent_secondary block"></span>
-          <span className="w-8 h-1 group-hover:bg-accent_secondary block"></span>
-          <span className="w-8 h-1 group-hover:bg-accent_secondary block mb-0"></span>
+          <span className="w-4 h-1 group-hover:bg-green block"></span>
+          <span className="w-8 h-1 group-hover:bg-green block"></span>
+          <span className="w-8 h-1 group-hover:bg-green block mb-0"></span>
         </div>
       </nav>
 
       {/* mobile navigation panel */}
       <nav
-        className={`overflow-hidden md:hidden origin-top transition-all duration-500 linear-ease bg-foreground text-background ${
+        className={`overflow-hidden md:hidden origin-top transition-all duration-500 linear-ease bg-[#f4f4f4] text-navy ${
           navOpen ? "max-h-[200px]" : "max-h-0"
         }`}
       >
-        <ul className="text-lg flex flex-col child:my-2 child:cursor-pointer py-2 ">
+        <ul className="text-2xl flex flex-col child:my-2 child:cursor-pointer py-2 ">
           <Link href="/#about">
             <li
               onClick={toggleNav}

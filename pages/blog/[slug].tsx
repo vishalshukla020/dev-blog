@@ -24,7 +24,7 @@ const PostPage: NextPage<MDXPost> = ({ post: { source, meta } }) => {
     <Transition id="blog-page">
       <div className="max-w-[50rem] mx-auto">
         <BlogHeader meta={meta} />
-        <div className="prose prose-lg md:prose-xl text-foreground prose-a:text-accent prose-code:text-accent_primary py-5">
+        <div className="prose max-w-prose prose-xl md:prose-2xl text-lightestSlate prose-a:text-white prose-code:text-green py-5">
           <MDXRemote {...source} />
         </div>
       </div>

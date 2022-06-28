@@ -319,27 +319,10 @@ const Loader: React.FC = () => {
 };
 
 export const LoadingProgress = () => {
-  const progressBarColor = [
-    "bg-foreground",
-    "bg-purple",
-    "bg-accent",
-    "bg-accent_primary",
-    "bg-accent_secondary",
-    "bg-yellow",
-    "bg-purple",
-    "bg-orange",
-  ];
-
-  const bg = () => {
-    return progressBarColor[
-      Math.floor(Math.random() * progressBarColor.length)
-    ];
-  };
-
   return (
     <>
       <motion.div
-        className={`w-full absolute h-[2px] ${bg()} opacity-75`}
+        className="w-full absolute h-[2px] bg-green opacity-75"
         initial={{ width: 0 }}
         animate={{ width: "100vw", transition: { duration: 2 } }}
       ></motion.div>

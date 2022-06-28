@@ -2,15 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "custom";
+  font-weight: 200;
+  font-display: fallback;
+  src: url("/fonts/NTR-Regular.ttf") format("truetype");
+}
+
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
-    @apply bg-background text-foreground font-mono no-scrollbar;
+    @apply select-none bg-navy text-white font-custom no-scrollbar;
   }
 }
 
 @layer components {
   .wrapper {
-    @apply relative flex-grow my-0 mx-auto py-0 px-6 w-auto h-full md:max-w-[46rem] lg:max-w-[960px] xl:max-w-[1152px] 2xl:max-w-[1244px];
+    @apply relative flex-grow my-0 mx-auto py-0 px-6 w-auto h-full md:max-w-[45rem] lg:max-w-[960px] xl:max-w-[1152px] 2xl:max-w-[1244px];
   }
 
   .center {
@@ -18,11 +28,11 @@
   }
 
   .primary-button {
-    @apply transition-all inline-block bg-gray-200 rounded-full px-5 py-3 sm:text-xl font-semibold text-gray-700 mr-2 mb-2 hover:scale-105 origin-left;
+    @apply cursor-pointer transition-all inline-block rounded-lg px-5 py-3 text-xl sm:text-2xl mr-2 mb-2 origin-left border-2 border-green text-green;
   }
 
   .title {
-    @apply text-[2.5rem] sm:text-6xl lg:text-8xl font-bold tracking-wide;
+    @apply text-4xl sm:text-6xl font-bold tracking-wide;
   }
 
   .h1 {
@@ -30,7 +40,7 @@
   }
 
   .h2 {
-    @apply text-xl sm:text-3xl;
+    @apply text-xl sm:text-3xl lg:text-5xl;
   }
 
   .h3 {
