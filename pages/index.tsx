@@ -7,6 +7,7 @@ import Hero from "components/Hero";
 import About from "components/About";
 import Contact from "components/Contact";
 import Socials from "components/Socials";
+import Projects from "components/Projects";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Hero />
+        <Projects />
         <About />
         <Contact />
         <Socials />

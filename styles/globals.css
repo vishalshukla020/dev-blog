@@ -31,6 +31,10 @@
     @apply cursor-pointer transition-all inline-block rounded-lg px-5 py-3 text-xl sm:text-2xl mr-2 mb-2 origin-left border-2 border-green text-green;
   }
 
+  .para {
+    @apply font-thin text-xl sm:text-3xl text-justify;
+  }
+
   .title {
     @apply text-4xl sm:text-6xl font-bold tracking-wide;
   }
@@ -56,6 +60,14 @@
     .no-scrollbar {
       -ms-overflow-style: none; /* IE and Edge */
       scrollbar-width: none; /* Firefox */
+    }
+
+    .trapezoid {
+      border-radius: 10px 10px 0 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      height: 0;
+      width: 15em;
     }
 
     .hover-animation-link {

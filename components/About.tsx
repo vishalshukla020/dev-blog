@@ -8,7 +8,7 @@ const About: React.FC = () => {
   return (
     <div className="py-10" id="about">
       <h1 className="title mb-10">/ About me </h1>
-      <p className="text-slate  font-thin text-xl sm:text-3xl sm:mt-2 md:w-[90%] lg:w-[80%] text-justify lg:text-start">
+      <p className="text-slate font-thin text-xl sm:text-3xl sm:mt-2 md:w-[90%] lg:w-[80%] text-justify lg:text-start">
         I&apos;m a self taught{" "}
         <span className="text-green font-semibold">full-stack</span> web
         developer based in India. I&apos;ve been doing freelance projects from
